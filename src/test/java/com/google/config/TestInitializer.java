@@ -1,11 +1,9 @@
 package com.google.config;
 
 import com.google.page.MainPage;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.WebDriver;
-
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public class TestInitializer {
 
@@ -17,17 +15,17 @@ public class TestInitializer {
         return mainPage;
     }
 
-    @BeforeAll
+    @BeforeClass
     public static void setUpDriverManager() {
         driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
     }
 
-    @BeforeEach
+    @BeforeMethod
     public void setUpHomePage() {
         mainPage = new MainPage(driverManager.getDriver());
     }
 
-    @AfterAll
+    @AfterClass
     public static void tearDown() {
        driverManager.getDriver().close();
     }

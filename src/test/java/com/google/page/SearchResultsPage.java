@@ -12,9 +12,8 @@ public class SearchResultsPage extends BasePage {
     private By selectionLocator = By.xpath("//a[contains(@href, 'https://translate.google.com/')]");
 
     //Click on required element to navigate to the corresponding Page
-    public ResultPage selectSearchResultElement() {
-        clickElement(selectionLocator);
-        driver.manage().deleteAllCookies();
+    public ResultPage selectSearchResultElement() throws InterruptedException {
+        openLinkInNewTab(selectionLocator);
         return new ResultPage(driver);
     }
 }

@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.remote.DesiredCapabilities;
-
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,9 +19,10 @@ public class FirefoxDriverManager extends DriverManager {
         //SetUP Driver and English language to avoid internationalization conflicts
         System.setProperty(driverName, driverPath);
         FirefoxProfile profile = new FirefoxProfile();
-        profile.setPreference("intl.accept_languages","en-US, en");
-        profile.setPreference("browser.private.browsing.autostart",true);
-        driver = new FirefoxDriver();
+        profile.setPreference("intl.accept_languages","en-us, en, fr, fr-fr");
+        FirefoxOptions option = new FirefoxOptions();
+        option.setProfile(profile);
+        driver = new FirefoxDriver(option);
         //Open WebApp
         driver.navigate().to(websiteUrl);
         // Maximize Browser Window

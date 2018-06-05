@@ -19,7 +19,6 @@ public class ChromeDriverManager extends DriverManager {
         System.setProperty(driverName, driverPath);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--lang=en-ca");
-        options.addArguments("--incognito");
         driver = new ChromeDriver(options);
         //Open WebApp
         driver.navigate().to(websiteUrl);

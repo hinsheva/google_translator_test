@@ -1,6 +1,6 @@
 ##### DESCRIPTION #####
 
-This set of modules is a JUnit 5.0 based framework for Web testing of **translate.google.com** in Chrome and Firefox browsers using Selenium v. '3.11.0'
+This set of modules is a TestNG 6.14.3 based framework for Web testing of **translate.google.com** in Chrome and Firefox browsers using Selenium v. '3.11.0'
 
 ##### INSTALLATION #####
 (See the full guide of how to Download and Install Selenium WebDriver: https://www.guru99.com/installing-selenium-webdriver.html)
@@ -27,56 +27,27 @@ http://maven.apache.org/users/index.html
     
 ###### dependencies list ######
 {
- 
-           <dependency>
-               <groupId>org.junit.platform</groupId>
-               <artifactId>junit-platform-runner</artifactId>
-               <version>1.2.0</version>
-               <scope>test</scope>
-           </dependency>
-   
-           <dependency>
-               <groupId>org.junit.platform</groupId>
-               <artifactId>junit-platform-launcher</artifactId>
-               <version>1.2.0</version>
-               <scope>test</scope>
-           </dependency>
-   
-           <dependency>
-               <groupId>org.junit.platform</groupId>
-               <artifactId>junit-platform-engine</artifactId>
-               <version>1.2.0</version>
-           </dependency>
-   
-           <dependency>
-               <groupId>org.junit.platform</groupId>
-               <artifactId>junit-platform-suite-api</artifactId>
-               <version>1.2.0</version>
-           </dependency>
-   
-           <dependency>
-               <groupId>org.seleniumhq.selenium</groupId>
-               <artifactId>selenium-server</artifactId>
-               <version>3.11.0</version>
-           </dependency>
-           <dependency>
-               <groupId>org.junit.jupiter</groupId>
-               <artifactId>junit-jupiter-api</artifactId>
-               <version>5.2.0-RC1</version>
-           </dependency>
-   
-           <dependency>
-               <groupId>org.junit.vintage</groupId>
-               <artifactId>junit-vintage-engine</artifactId>
-               <version>5.2.0</version>
-               <scope>test</scope>
-           </dependency>
-    
+
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>3.11.0</version>
+        </dependency>
+    </dependencies>
+
 }
 
 ##### RUNNING #####
 
-To run the test nothing specific required except the mentioned above steps.
+To run the test on windows nothing specific required, except the mentioned above steps.
 If needed, please specify/switch to the desired browser(Chrome/Firefox) within TestInitializer java file that is located in config folder
 
 ###### 'config.properties' file: ######
